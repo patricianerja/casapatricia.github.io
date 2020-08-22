@@ -1,4 +1,4 @@
-# Waldrain Web Site
+# Casa Patricia
 
-`waldrain.github.io` manages the source code used to define 
-the [Waldrain web site](https://waldrain.github.io).
+`casapatricia.github.io` manages the source code used to define 
+the [Casa Patricia web site](https://casapatricia.github.io).
