@@ -5,9 +5,9 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,maximum-scale=2">
-    <meta name="keywords" content="abwasserminimierung architekten ateliers ausrichtungen bad baubiologie bauen bauideen bauvolumen bebauen beleben bewegungsraum biochar cluster-wg co2 dreilaendereck ecology eingangsbereich einzelne emmissionen familien garten gemeinschaftlich genossenschaft holzbau holzkohle koehlern kompostklo kreativraum kueche leben lehmbau loerrach nachhaltig nachhaltigkeit nutzungskonzept oekologie oekologisch paare passivhaus permakultur preta regenwassernutzung sustainability tanzraum terra terrapreta unterschiedlichen vollholz vorentwurf waldrain werkstatt wohnhaus wohnzimmer">
-    <meta name="description" content="Waldrain Bau- Wohn- und Lebensgemeinschaft">
-    <meta name="author" content="Jeremy Tammik">
+    <meta name="keywords" content="casa patricia nerja alquiler piso apartment rental summer holiday">
+    <meta name="description" content="Casa Patricia">
+    <meta name="author" content="Patricia Nerja">
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
     <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
@@ -26,17 +26,6 @@
           classes: { list: 'jtcollapsible', item: '' }
         });
         
-        // for each li.jtcollapsible that has a child
-        // element ol, add a button that can be clicked
-        // to hide and unhide the child
-
-        // for each ol.jtcollapsible, add a button to its
-        // parent element innerhtml that can be clicked
-        // to hide and unhide it
-
-        // Right-pointing triangle &#9654; \25b6 \u9654
-        // Down-pointing triangle &#9660; \25bc \u9660
-
         $("ul.jtcollapsible").each(function() {
           jt_make_list_collapsible($(this));
         });        
@@ -44,49 +33,20 @@
 
       // make_list_collapsible - make this list element collapsible
       function jt_make_list_collapsible(e) {
-        // check if parent is a list as well.
-        // we do not want to collapse the top-most
-        // level list, because then we would see
-        // nothing left and not be able to uncollapse
-        
         var p = e.parent();
         if(p.is("li")) {
-          //var a = p.children(":first");
-          //console.assert(a.is("a"));
-          //console.log(a.text());
-
-          // https://www.w3schools.com/howto/howto_js_collapsible.asp
-          // add click listener to open collapsed sublist
-
           e.before("&nbsp;<button style=\"font-size: 80%\" onclick=\"jt_toggle_collapsed_list(this)\">&#9654;</button>");
         }
         else{
-          // top-level list should never collapse
           e.removeClass("jtcollapsible"); 
         }
       }
       
-      // jt_toggle_collapsed_list - toggle collapsed list
       function jt_toggle_collapsed_list(e) {
-        //console.log(e.tagName);
-        //var p = e.parentNode;
-        //console.log(p.tagName);
-        //var a = p.firstChild;
-        //console.log(a.tagName);
-        //a = $(a); // swith to jquery
-        //console.assert(a.is("a"));
-        //console.log(a.text());
         e = $(e); // switch to jquery
         var content = e.next();
         var old_display = content.css('display');
         var was_collapsed = (old_display==="none");
-
-        // toggle the list CSS display property between
-        // 'block and 'none', and the collapser button
-        // test between
-        // right-pointing triangle &#9654; \25b6 \u9654
-        // down-pointing triangle &#9660; \25bc \u9660
-
         var new_display =  was_collapsed ? "block" : "none";
         e.text( was_collapsed ? '\u25bc' : '\u25b6');
         content.css("display", new_display); 
@@ -114,9 +74,7 @@
     <!-- FOOTER  -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p>Copyright &#169; 2020 by <a href="https://thebuildingcoder.typepad.com/blog/about-the-author.html">Jeremy Tammik</a>
-          &ndash; <a href="https://github.com/waldrain/waldrain.github.io">web page source</a>
-          &ndash; <a href="moniwonig">moniwonig</a></p>
+        <p>Copyright &#169; 2020 by <a href="https://github.com/patricianerja/casapatricia.github.io">Patricia Nerja</a></p>
       </footer>
     </div>
   </body>
