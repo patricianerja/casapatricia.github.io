@@ -1,0 +1,33 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+#main_content.inner {
+  width: 100%;
+  float: left;  
+}
+
+footer.inner { font-size: 80% }
+
+// make collapsible toc list
+// https://www.w3schools.com/howto/howto_js_collapsible.asp
+
+.jtcollapsible {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+td {
+  padding: 0 10px 0 10px;
+}
+
+td.r {
+  text-align: right;
+}
+
+span.b {
+  font-weight: bold;
+}

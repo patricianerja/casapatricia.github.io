@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <meta name="keywords" content="casa patricia nerja alquiler piso apartment rental summer holiday">
+    <meta name="description" content="Casa Patricia">
+    <meta name="author" content="Patricia Nerja">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" type="text/css" href="assets/css/normalize.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    
+    <!-- TOC stuff -->
+    <script type="text/javascript" src="js/toc.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#toc').toc({
+          title: '',
+          headers: 'h2, h3',
+          listType: 'ul', // values: [ol|ul]
+          showEffect: 'none', // values: [show|slideDown|fadeIn|none]
+          showSpeed: 'none', // set to 0 to deactivate effect
+          classes: { list: 'jtcollapsible', item: '' }
+        });
+        
+        $("ul.jtcollapsible").each(function() {
+          jt_make_list_collapsible($(this));
+        });        
+      });
+
+      // make_list_collapsible - make this list element collapsible
+      function jt_make_list_collapsible(e) {
+        var p = e.parent();
+        if(p.is("li")) {
+          e.before("&nbsp;<button style=\"font-size: 80%\" onclick=\"jt_toggle_collapsed_list(this)\">&#9654;</button>");
+        }
+        else{
+          e.removeClass("jtcollapsible"); 
+        }
+      }
+      
+      function jt_toggle_collapsed_list(e) {
+        e = $(e); // switch to jquery
+        var content = e.next();
+        var old_display = content.css('display');
+        var was_collapsed = (old_display==="none");
+        var new_display =  was_collapsed ? "block" : "none";
+        e.text( was_collapsed ? '\u25bc' : '\u25b6');
+        content.css("display", new_display); 
+      }
+    </script>
+    
+    <!-- photo gallery stuff -->
+    <link type="text/css" rel="stylesheet" href="assets/css/lightgallery.css" />
+    <link type="text/css" rel="stylesheet" href="assets/css/jtgallery.css" />
+    <script src="js/lightgallery.min.js"></script>
+    <script src="js/jtgallery.js"></script>
+    
+    {% seo %}
+  </head>
+
+  <body>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        {{ content }}
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Copyright &#169; 2020 by <a href="https://github.com/patricianerja/casapatricia.github.io">Patricia Nerja</a></p>
+      </footer>
+    </div>
+  </body>
+</html>
